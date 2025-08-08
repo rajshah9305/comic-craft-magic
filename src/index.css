@@ -8,33 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Dark Theme */
+    --background: 220 13% 9%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 17% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 17% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Electric Blue Primary */
+    --primary: 195 100% 65%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 195 100% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Neon Pink Secondary */
+    --secondary: 320 91% 65%;
+    --secondary-foreground: 220 13% 9%;
+    --secondary-glow: 320 91% 75%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Golden Accent */
+    --accent: 45 93% 65%;
+    --accent-foreground: 220 13% 9%;
+    --accent-glow: 45 93% 75%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 195 100% 65%;
+
+    /* Comic-specific colors */
+    --comic-panel: 224 17% 8%;
+    --comic-border: 215 25% 25%;
+    --comic-shadow: 220 13% 5%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(195 100% 65% / 0.9), hsl(320 91% 65% / 0.9));
+    --gradient-panel: linear-gradient(145deg, hsl(224 17% 12%), hsl(215 25% 8%));
+    --gradient-glow: radial-gradient(circle, hsl(195 100% 65% / 0.3) 0%, transparent 70%);
+    --gradient-cyber: linear-gradient(90deg, hsl(195 100% 65%), hsl(320 91% 65%), hsl(45 93% 65%));
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(195 100% 65% / 0.5);
+    --shadow-panel: 0 10px 30px hsl(220 13% 5% / 0.8);
+    --shadow-text: 0 2px 10px hsl(195 100% 65% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +127,111 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+}
+
+@layer components {
+  /* Comic Panel Styles */
+  .comic-panel {
+    @apply relative overflow-hidden rounded-xl;
+    background: var(--gradient-panel);
+    border: 2px solid hsl(var(--comic-border));
+    box-shadow: var(--shadow-panel);
+    transition: var(--transition-smooth);
+  }
+
+  .comic-panel:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-panel), var(--shadow-neon);
+  }
+
+  .comic-character {
+    @apply relative block w-full h-full object-cover;
+    transition: var(--transition-smooth);
+  }
+
+  .comic-character:hover {
+    transform: scale(1.05);
+  }
+
+  /* Text Effects */
+  .text-neon {
+    color: hsl(var(--primary));
+    text-shadow: var(--shadow-text);
+  }
+
+  .text-cyber {
+    background: var(--gradient-cyber);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    position: relative;
+  }
+
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-glow);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
+  }
+
+  /* Interactive Elements */
+  .panel-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* Scroll Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-shadow-neon {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+
+  .bg-comic-panel {
+    background: hsl(var(--comic-panel));
+  }
+
+  .border-comic {
+    border-color: hsl(var(--comic-border));
+  }
+}
+
+/* Keyframe Animations */
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
