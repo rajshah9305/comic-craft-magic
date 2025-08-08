@@ -1,14 +1,14 @@
-import NavigationHeader from "@/components/NavigationHeader";
-import Hero from "@/components/Hero";
-import ComicGrid from "@/components/ComicGrid";
+import EditorialNavigation from "@/components/NavigationHeader";
+import EditorialHero from "@/components/EditorialHero";
+import MagazineLayout from "@/components/MagazineLayout";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <NavigationHeader />
+      <EditorialNavigation />
       <main>
-        <Hero />
-        <ComicGrid />
+        <EditorialHero />
+        <MagazineLayout />
       </main>
     </div>
   );

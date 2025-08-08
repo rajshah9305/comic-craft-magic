@@ -8,60 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Dark Theme */
-    --background: 220 13% 9%;
-    --foreground: 210 40% 98%;
+    /* Editorial Dark Theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
-    --card: 224 17% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 224 17% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Electric Blue Primary */
-    --primary: 195 100% 65%;
-    --primary-foreground: 220 13% 9%;
-    --primary-glow: 195 100% 75%;
+    /* Sophisticated Monochrome with Accent */
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3%;
+    --primary-muted: 0 0% 20%;
 
-    /* Neon Pink Secondary */
-    --secondary: 320 91% 65%;
-    --secondary-foreground: 220 13% 9%;
-    --secondary-glow: 320 91% 75%;
+    /* Gold Accent for Premium Feel */
+    --accent: 45 86% 68%;
+    --accent-foreground: 0 0% 3%;
+    --accent-muted: 45 86% 25%;
 
-    /* Golden Accent */
-    --accent: 45 93% 65%;
-    --accent-foreground: 220 13% 9%;
-    --accent-glow: 45 93% 75%;
+    /* Editorial Grays */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 85%;
 
-    --muted: 215 25% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 195 100% 65%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 45 86% 68%;
 
-    /* Comic-specific colors */
-    --comic-panel: 224 17% 8%;
-    --comic-border: 215 25% 25%;
-    --comic-shadow: 220 13% 5%;
+    /* Editorial-specific colors */
+    --editorial-surface: 0 0% 5%;
+    --editorial-border: 0 0% 18%;
+    --editorial-highlight: 0 0% 25%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(195 100% 65% / 0.9), hsl(320 91% 65% / 0.9));
-    --gradient-panel: linear-gradient(145deg, hsl(224 17% 12%), hsl(215 25% 8%));
-    --gradient-glow: radial-gradient(circle, hsl(195 100% 65% / 0.3) 0%, transparent 70%);
-    --gradient-cyber: linear-gradient(90deg, hsl(195 100% 65%), hsl(320 91% 65%), hsl(45 93% 65%));
+    /* Sophisticated Gradients */
+    --gradient-editorial: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --gradient-feature: linear-gradient(145deg, hsl(0 0% 7%), hsl(0 0% 12%));
+    --gradient-accent: linear-gradient(90deg, hsl(45 86% 68% / 0.1), hsl(45 86% 68% / 0.05));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 85%));
 
-    /* Shadows */
-    --shadow-neon: 0 0 20px hsl(195 100% 65% / 0.5);
-    --shadow-panel: 0 10px 30px hsl(220 13% 5% / 0.8);
-    --shadow-text: 0 2px 10px hsl(195 100% 65% / 0.3);
+    /* Elegant Shadows */
+    --shadow-editorial: 0 20px 60px hsl(0 0% 0% / 0.8);
+    --shadow-feature: 0 10px 40px hsl(0 0% 0% / 0.6);
+    --shadow-accent: 0 5px 20px hsl(45 86% 68% / 0.2);
 
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Smooth Transitions */
+    --transition-editorial: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -82,43 +81,6 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -128,110 +90,170 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Playfair Display', 'Inter', serif;
+    line-height: 1.6;
   }
 }
 
 @layer components {
-  /* Comic Panel Styles */
-  .comic-panel {
-    @apply relative overflow-hidden rounded-xl;
-    background: var(--gradient-panel);
-    border: 2px solid hsl(var(--comic-border));
-    box-shadow: var(--shadow-panel);
-    transition: var(--transition-smooth);
+  /* Editorial Layout Styles */
+  .editorial-surface {
+    @apply relative overflow-hidden;
+    background: var(--gradient-feature);
+    border: 1px solid hsl(var(--editorial-border));
+    box-shadow: var(--shadow-feature);
+    transition: var(--transition-editorial);
   }
 
-  .comic-panel:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: var(--shadow-panel), var(--shadow-neon);
+  .editorial-surface:hover {
+    box-shadow: var(--shadow-editorial);
+    border-color: hsl(var(--accent) / 0.3);
   }
 
-  .comic-character {
+  .character-feature {
     @apply relative block w-full h-full object-cover;
-    transition: var(--transition-smooth);
+    transition: var(--transition-editorial);
   }
 
-  .comic-character:hover {
-    transform: scale(1.05);
+  .character-feature:hover {
+    transform: scale(1.02);
   }
 
-  /* Text Effects */
-  .text-neon {
-    color: hsl(var(--primary));
-    text-shadow: var(--shadow-text);
-  }
-
-  .text-cyber {
-    background: var(--gradient-cyber);
+  /* Typography */
+  .text-editorial {
+    background: var(--gradient-text);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 3s ease-in-out infinite;
   }
 
-  .glow-effect {
+  .text-accent-gold {
+    color: hsl(var(--accent));
+  }
+
+  .text-highlight {
     position: relative;
   }
 
-  .glow-effect::before {
+  .text-highlight::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: var(--gradient-glow);
-    animation: pulse 4s ease-in-out infinite;
-    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--accent));
+    transform: scaleX(0);
+    transition: var(--transition-smooth);
+    transform-origin: left;
   }
 
-  /* Interactive Elements */
-  .panel-grid {
+  .text-highlight:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Layout Components */
+  .magazine-grid {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .feature-large {
+    grid-column: span 8;
+    grid-row: span 2;
+  }
+
+  .feature-medium {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .feature-small {
+    grid-column: span 3;
+    grid-row: span 1;
   }
 
   /* Scroll Animations */
-  .fade-in {
+  .fade-up {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(60px);
+    transition: var(--transition-editorial);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: var(--transition-editorial);
+  }
+
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Interactive Elements */
+  .read-more-button {
+    @apply relative overflow-hidden;
     transition: var(--transition-smooth);
   }
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .read-more-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.2), transparent);
+    transition: var(--transition-smooth);
+  }
+
+  .read-more-button:hover::before {
+    left: 100%;
   }
 }
 
 @layer utilities {
-  .text-shadow-neon {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+  .bg-editorial {
+    background: hsl(var(--editorial-surface));
   }
 
-  .bg-comic-panel {
-    background: hsl(var(--comic-panel));
+  .border-editorial {
+    border-color: hsl(var(--editorial-border));
   }
 
-  .border-comic {
-    border-color: hsl(var(--comic-border));
+  .shadow-editorial {
+    box-shadow: var(--shadow-editorial);
   }
 }
+
+/* Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
 
 /* Keyframe Animations */
-@keyframes shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+@keyframes reveal {
+  from { 
+    opacity: 0; 
+    transform: scale(0.8) translateY(40px);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0);
+  }
 }
